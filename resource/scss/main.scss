@@ -1,4 +1,24 @@
 
+.input__field,
+.select__field {
+  width: 100%;
+}
+
+.filter {
+  
+  margin: 50px auto;
+  width: 500px;
+  padding: 10px;
+  background: #eee;
+  border: 1px solid #ddd;
+  
+  &__field {
+    display: inline-block;
+    width: 240px;
+    padding: 0 5px;
+  }
+}
+
 .chart {
   
   margin: 50px auto;

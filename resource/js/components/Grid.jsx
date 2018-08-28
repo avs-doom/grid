@@ -36,8 +36,7 @@ export default class Grid extends Component {
         super(props);
         
         this.state = {
-            isShowCurrency: false,
-            
+            isShowCurrency: false
         };
     }
     

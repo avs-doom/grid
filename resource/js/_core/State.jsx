@@ -3,6 +3,10 @@
 
 const initialState = {
     currency: 60,
+    filter: {
+        column: 'name',
+        value: ''
+    },
     sort: {
         column: '',
         direct: 'asc'
@@ -27,12 +31,17 @@ const initialState = {
 
 const CHANGE_ITEM = 'CHANGE_ITEM';
 const CHANGE_SORT = 'CHANGE_SORT';
+const CHANGE_FILTER = 'CHANGE_FILTER';
 
 export function crud(state = initialState, action) {
 
     const { type } = action || {};
     
     switch(type) {
+        case CHANGE_FILTER:
+            return {...state, filter: action.filter, items: initialState.items.filter(item => {
+                return String(item[action.filter.column]).indexOf(action.filter.value) > -1;
+            })};
         case CHANGE_SORT:
             return {
                 ...state,
@@ -58,4 +67,8 @@ export function onChangeSort(column, direct) {
 
 export function onChangeItem(id, data) {
     return {type: CHANGE_ITEM, id, data};
+}
+
+export function onChangeFilter(filter) {
+    return {type: CHANGE_FILTER, filter};
 }
