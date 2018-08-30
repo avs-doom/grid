@@ -8,7 +8,7 @@ const initialState = {
         value: ''
     },
     sort: {
-        column: '',
+        column: 'id',
         direct: 'asc'
     },
     items: [{

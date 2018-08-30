@@ -208,7 +208,7 @@ export default class Grid extends Component {
                     <tfoot className="table__footer">
                         <tr className="table__footer-row">
                             <td className="table__footer-cell" colSpan="2" style={{textAlign: 'right'}}><b>ИТОГО:</b></td>
-                            <td>{this._getFullPrice()}</td>
+                            <td className="table__footer-cell">{this._getFullPrice()}</td>
                         </tr>
                     </tfoot>
                     <tbody className="table__body">
