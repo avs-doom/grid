@@ -55,19 +55,21 @@ export default class Chart extends Component {
         
         let startAngle = 0;
         
+        ctx.clearRect(0, 0, chart.width, chart.height);
+        
         items.forEach((item, index) => {
             
             const sliceAngle = 2 * Math.PI * (item.count * item.price) / totalValue;
             
-            this._drawPieSlice(
+            this._drawPieSlice({
                 ctx,
-                chart.width/2,
-                chart.height/2,
-                Math.min(chart.width/2, chart.height/2),
+                centerX: chart.width/2,
+                centerY: chart.height/2,
+                radius: Math.min(chart.width/2, chart.height/2),
                 startAngle,
-                startAngle + sliceAngle,
-                colors[index]
-            );
+                endAngle: startAngle + sliceAngle,
+                color: colors[index]
+            });
             
             startAngle += sliceAngle;
         });
@@ -86,8 +88,10 @@ export default class Chart extends Component {
         return totalValue;
     }
     
-    _drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ) {
-        
+    _drawPieSlice(options) {
+    
+        const { ctx, centerX, centerY, radius, startAngle, endAngle, color } = options || {};
+    
         ctx.fillStyle = color;
         ctx.beginPath();
         ctx.moveTo(centerX,centerY);
