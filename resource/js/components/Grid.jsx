@@ -181,7 +181,6 @@ export default class Grid extends Component {
         
         return (
             <section className="grid">
-                
                 <div className="currency">
                     <span>Курс валюты: <b>{currency}</b></span>
                     <label className="checkbox">

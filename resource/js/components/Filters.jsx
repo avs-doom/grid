@@ -48,7 +48,9 @@ export default class Filters extends Component {
         
         return (
             <section className="filter">
-               <label className="filter__field">Значение <Input value={filter.value} onChange={this._handlerOnChange.bind(this, 'value')} /></label>
+               <label className="filter__field">Значение 
+                   <Input value={filter.value} onChange={this._handlerOnChange.bind(this, 'value')} />
+               </label>
                <label className="filter__field">Столбец 
                    <select value={filter.column} className="select__field" onChange={this._handlerOnChange.bind(this, 'column')}>
                        <option value="name">Название</option>

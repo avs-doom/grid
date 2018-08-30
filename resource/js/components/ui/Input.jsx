@@ -69,7 +69,8 @@ export default class Input extends Component {
             <div className="input">
                 <input 
                     className="input__field"
-                    value={value} placeholder={placeholder}
+                    value={value}
+                    placeholder={placeholder}
                     onChange={this._handlerOnChange.bind(this)}
                     onBlur={this._handlerOnBlur.bind(this)}
                     onFocus={this._handlerOnFocus.bind(this)}
